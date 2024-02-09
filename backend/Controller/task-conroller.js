@@ -37,7 +37,7 @@ export const getUserTasks = async (req, res) => {
   try {
     const { userID } = req;
 
-    const findUser = await User.findById({ userID });
+    const findUser = await User.findById({ _id:userID});
 
     if (!findUser) {
       return res.status(400).json({ error: "No user with ID" });
